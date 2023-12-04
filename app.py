@@ -1,8 +1,8 @@
 import streamlit as st
 from sqlalchemy import text
 
-list_doctor = ['', 'dr. Nurita', 'dr. Yogi', 'dr. Wibowo', 'dr. Ulama', 'dr. Ping']
-list_symptom = ['', 'male', 'female']
+list_nama_lengkap = ['', 'dr. Nurita', 'dr. Yogi', 'dr. Wibowo', 'dr. Ulama', 'dr. Ping']
+list_sekolah = ['', 'male', 'female']
 
 conn = st.connection("postgresql", type="sql", 
                      url="postgresql://akmalabidin004:sPK78YJDilom@ep-damp-pine-78588298.ap-southeast-1.aws.neon.tech/neondb")
@@ -40,9 +40,9 @@ if page == "Edit Data":
 
         with st.expander(f'a.n. {patient_name_lama}'):
             with st.form(f'data-{id}'):
-                doctor_name_baru = st.selectbox("nama_lengkap", list_doctor, list_doctor.index(doctor_name_lama))
+                doctor_name_baru = st.selectbox("nama_lengkap", list_nama_lengkap, list_nama_lengkap.index(doctor_name_lama))
                 patient_name_baru = st.text_input("asal", patient_name_lama)
-                gender_baru = st.selectbox("jenis_kelamin", list_symptom, list_symptom.index(gender_lama))
+                gender_baru = st.selectbox("jenis_kelamin", list_sekolah, list_sekolah.index(gender_lama))
                 symptom_baru = st.multiselect("sekolah", ['DU1', 'DU2', 'DU3', 'MAU'], eval(symptom_lama))
                 handphone_baru = st.text_input("asrama", handphone_lama)
                 address_baru = st.text_input("address", address_lama)

@@ -1,7 +1,7 @@
 import streamlit as st
 from sqlalchemy import text
 
-list_nama_lengkap = ['', 'dr. Nurita', 'dr. Yogi', 'dr. Wibowo', 'dr. Ulama', 'dr. Ping']
+list_nama_lengkap = ['', 'dr. Nurita', 'dr. Yogi', 'dr. Wibowo', 'dr. Ulama', 'dr. Ping', 'akmal']
 list_sekolah = ['', 'male', 'female']
 
 conn = st.connection("postgresql", type="sql", 
